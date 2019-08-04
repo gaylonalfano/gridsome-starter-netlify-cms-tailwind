@@ -20,8 +20,9 @@ module.exports = {
   plugins: [{
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'posts/**/*.md',
+        path: 'content/posts/**/*.md',
         typeName: 'Post',
+        route: 'post/:slug',
         remark: {
           plugins: [
             // ...local plugins
@@ -33,6 +34,13 @@ module.exports = {
       use: `gridsome-plugin-netlify-cms`,
       options: {
         publicPath: `/admin`
+      }
+    },
+    {
+      use: `gridsome-plugin-netlify-cms-paths`,
+      options: {
+        contentTypes: ['Post'],
+        coverField: 'cover_image'
       }
     },
     {
