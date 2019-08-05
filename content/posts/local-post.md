@@ -1,6 +1,6 @@
 ---
 title: Local Post
-cover_image: /uploads/waveshirt.jpg
+cover_image: /uploads/waveshirt.jpeg
 excerpt: Here's the EXCERPT for a local post called local-post.md.
 date: 2019-08-05
 ---
