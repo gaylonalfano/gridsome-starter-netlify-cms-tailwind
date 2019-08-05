@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Gridsome',
+  siteDescription: 'Here is the site description configured inside the gridsome.config.js file.',
   transformers: {
     remark: {
       externalLinksTarget: '_blank',
