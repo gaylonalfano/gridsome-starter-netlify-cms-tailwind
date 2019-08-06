@@ -1,25 +1,23 @@
 <template>
-  <div class="max-w-4xl m-auto pl-20 items-center mb-20 h-80">
-    <header class="flex justify-between items-center mb-20 h-80">
-      <strong>
-        <g-link exact to="/">{{ $static.metaData.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about">About</g-link>
-        <g-link class="nav__link" to="/blog">Blog</g-link>
-      </nav>
-    </header>
+  <div>
+    <Navbar />
     <slot />
+    <Footer />
   </div>
 </template>
 
-<static-query>
-query {
-  metaData {
-    siteName
+
+<script>
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export default {
+  components: {
+    Navbar,
+    Footer
   }
-}
-</static-query>
+};
+</script>
+
 
 <style src="../styles.css" />

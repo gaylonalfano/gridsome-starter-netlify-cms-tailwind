@@ -1,12 +1,28 @@
+// pages/Blog.vue
 <template>
   <Layout>
     <h1>Blog page</h1>
-    <div class="flex">
-      <div class="w-1/5 bg-gray-500">Left</div>
-      <div class="w-3/5 bg-gray-700">Center</div>
-      <div class="w-1/5 bg-gray-500">Right</div>
-    </div>
+    <article style="mb-2" v-for="edge in $static.allPost.edges" v-bind:key="edge.node.id">
+      <h2>{{ edge.node.title }}</h2>
+      <p>{{ edge.node.excerpt }}</p>
+      <p>Published {{ edge.node.date }}</p>
+      <div v-html="edge.node.content" />
+    </article>
   </Layout>
 </template>
 
+<static-query>
+{
+  allPost {
+    edges {
+      node {
+        id
+        content
+        title
+        date (format: "MMMM Do, YYYY")
+      }
+    }
+  }
+}
+</static-query>
 
