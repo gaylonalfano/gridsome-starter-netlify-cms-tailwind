@@ -1,6 +1,6 @@
 // components/Footer.vue
 <template>
-  <footer class="text-center tracking-wide p-10 bg-gray-600 text-white">
+  <footer class="text-center tracking-wide p-10 text-white">
     Copyright {{ getCurrentYear }} by
     <a
       v-bind:href="href"
