@@ -3,7 +3,7 @@
   <Layout>
     <h1 class="text-5xl font-semibold mb-4 border-b">Latest Posts</h1>
     <article class="block mb-2" v-for="edge in $static.allPost.edges" v-bind:key="edge.node.id">
-      <h2 class="text-3xl font-medium">{{ edge.node.title }}</h2>
+      <g-link v-bind:to="edge.node.path" class="text-3xl font-medium">{{ edge.node.title }}</g-link>
       <p class="font-light">{{ edge.node.excerpt }}</p>
       <p class="text-teal-400">Published {{ edge.node.date }} • {{ edge.node.timeToRead }} min read</p>
       <!-- <div v-html="edge.node.content" /> -->
@@ -26,9 +26,11 @@
         date (format: "MMMM Do, YYYY")
         timeToRead
         tags
+        path
       }
     }
   }
 }
 </static-query>
+
 

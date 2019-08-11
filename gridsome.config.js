@@ -19,41 +19,41 @@ module.exports = {
   },
 
   plugins: [{
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'content/posts/**/*.md',
-        typeName: 'Post',
-        route: 'post/:slug',
-        remark: {
-          plugins: [
-            // ...local plugins
-          ]
-        }
+    use: '@gridsome/source-filesystem',
+    options: {
+      path: 'content/posts/**/*.md',
+      typeName: 'Post',
+      route: 'posts/:slug',
+      remark: {
+        plugins: [
+          // ...local plugins
+        ]
       }
-    },
-    {
-      use: `gridsome-plugin-netlify-cms`,
-      options: {
-        publicPath: `/admin`
-      }
-    },
-    {
-      use: `gridsome-plugin-netlify-cms-paths`,
-      options: {
-        contentTypes: ['Post'],
-        coverField: 'cover_image'
-      }
-    },
-    {
-      use: 'gridsome-plugin-tailwindcss',
-      options: {
-        tailwindConfig: './tailwind.config.js',
-        purgeConfig: {},
-        presetEnvConfig: {},
-        shouldPurge: true,
-        shouldImport: true,
-        shouldTimeTravel: true,
-      }
-    },
+    }
+  },
+  {
+    use: `gridsome-plugin-netlify-cms`,
+    options: {
+      publicPath: `/admin`
+    }
+  },
+  {
+    use: `gridsome-plugin-netlify-cms-paths`,
+    options: {
+      contentTypes: ['Post'],
+      coverField: 'cover_image'
+    }
+  },
+  {
+    use: 'gridsome-plugin-tailwindcss',
+    options: {
+      tailwindConfig: './tailwind.config.js',
+      purgeConfig: {},
+      presetEnvConfig: {},
+      shouldPurge: true,
+      shouldImport: true,
+      shouldTimeTravel: true,
+    }
+  },
   ]
 }
