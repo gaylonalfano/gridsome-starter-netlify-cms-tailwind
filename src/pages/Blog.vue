@@ -1,12 +1,15 @@
 // pages/Blog.vue
 <template>
   <Layout>
-    <h1>Blog page</h1>
-    <article style="mb-2" v-for="edge in $static.allPost.edges" v-bind:key="edge.node.id">
-      <h2>{{ edge.node.title }}</h2>
-      <p>{{ edge.node.excerpt }}</p>
-      <p>Published {{ edge.node.date }}</p>
-      <div v-html="edge.node.content" />
+    <h1 class="text-5xl font-semibold mb-4 border-b">Latest Posts</h1>
+    <article class="block mb-2" v-for="edge in $static.allPost.edges" v-bind:key="edge.node.id">
+      <h2 class="text-3xl font-medium">{{ edge.node.title }}</h2>
+      <p class="font-light">{{ edge.node.excerpt }}</p>
+      <p class="text-teal-400">Published {{ edge.node.date }} • {{ edge.node.timeToRead }} min read</p>
+      <!-- <div v-html="edge.node.content" /> -->
+      <div>
+        <span v-for="tag in edge.node.tags" v-bind:key="tag" class="pr-2">#{{ tag }}</span>
+      </div>
     </article>
   </Layout>
 </template>
@@ -17,9 +20,12 @@
     edges {
       node {
         id
+        excerpt
         content
         title
         date (format: "MMMM Do, YYYY")
+        timeToRead
+        tags
       }
     }
   }

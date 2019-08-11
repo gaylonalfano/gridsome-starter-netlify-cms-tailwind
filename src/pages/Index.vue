@@ -1,11 +1,11 @@
 <template>
   <Layout>
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <div class="items-center justify-center px-6 py-2">
+    <div class="items-center justify-center py-2">
       <!-- <g-image alt="Example image" src="~/favicon.png" width="135" /> -->
 
-      <h1 class="block text-6xl font-semibold py-2">Hello.</h1>
-      <p class="block text-4xl font-medium py-4">My name is Gaylon Alfano.</p>
+      <h1 class="block text-5xl font-semibold py-2">Hello.</h1>
+      <p class="block text-3xl font-medium py-4">My name is Gaylon Alfano.</p>
       <p class="block text-2xl font-light py-2">
         I am a husband and father to the three beautiful boys. Originally from Austin, Texas,
         I have lived and worked in several countries throughout my life, but China has always
