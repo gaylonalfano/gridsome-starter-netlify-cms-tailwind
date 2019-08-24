@@ -4,7 +4,7 @@
     <time>{{ $page.post.date }}</time>
     <article class="items-center justify-center">
       <g-image v-bind:src="$page.post.cover_image" />
-      <p v-html="$page.post.content" />
+      <div v-html="$page.post.content" />
     </article>
   </Layout>
 </template>
@@ -15,7 +15,10 @@ query ($path:String!) {
     cover_image (width: 1000, height: 300, blur: 70, fit: cover)
     content
     title
-    tags
+    tags {
+      id
+      path
+    }
     date (format: "MMMM Do, YYYY")
   }
 }

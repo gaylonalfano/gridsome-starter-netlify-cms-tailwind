@@ -28,6 +28,16 @@ module.exports = {
         plugins: [
           // ...local plugins
         ]
+      },
+      refs: {
+        // Reference to existing authors by id.
+        // author: 'Author',
+        // Create a Tag content type and its nodes automatically.
+        tags: {
+          typeName: 'Tag',
+          route: '/tags/:id',
+          create: true
+        }
       }
     }
   },

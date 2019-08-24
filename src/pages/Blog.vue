@@ -8,7 +8,7 @@
       <p class="text-teal-400">Published {{ edge.node.date }} • {{ edge.node.timeToRead }} min read</p>
       <!-- <div v-html="edge.node.content" /> -->
       <div>
-        <span v-for="tag in edge.node.tags" v-bind:key="tag" class="pr-2">#{{ tag }}</span>
+        <span v-for="tag in edge.node.tags" v-bind:key="tag" class="pr-2">#{{ tag.id }}</span>
       </div>
     </article>
   </Layout>
@@ -25,7 +25,10 @@
         title
         date (format: "MMMM Do, YYYY")
         timeToRead
-        tags
+        tags {
+          id
+          path
+        }
         path
       }
     }

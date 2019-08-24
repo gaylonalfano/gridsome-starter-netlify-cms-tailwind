@@ -1,12 +1,12 @@
 <template>
-  <nav class="flex items-center justify-between flex-wrap container py-2 mx-auto">
+  <nav class="flex items-center justify-between flex-wrap container py-2">
     <div class="flex items-center flex-shrink-0 text-black mr-10">
       <g-link exact to="/">
-        <strong>{{ $static.metaData.siteName }}</strong>
+        <strong class="text-lg">{{ $static.metaData.siteName }}</strong>
       </g-link>
     </div>
     <div class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
-      <div class="text-sm sm:flex-grow">
+      <div class="text-md sm:flex-grow">
         <g-link
           class="block mt-4 sm:inline-block sm:mt-0 text-teal-400 hover:text-gray-700 mr-4"
           to="/"
