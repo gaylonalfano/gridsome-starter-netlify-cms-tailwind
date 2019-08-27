@@ -1,10 +1,12 @@
 <template>
   <Layout>
     <h1 class="text-5xl font-semibold mb-4">#{{ $page.tag.title }}</h1>
-    <div v-for="edge in $page.tag.belongsTo.edges" v-bind:key="edge.id">
-      <p>{{ edge.node.title }}</p>
+    <article v-for="edge in $page.tag.belongsTo.edges" v-bind:key="edge.id">
+      <g-image v-bind:src="edge.node.cover_image" />
+      <h2>{{ edge.node.title }}</h2>
       <p>{{ edge.node.excerpt }}</p>
-    </div>
+      <p>Posted {{ edge.node.date }} • {{ edge.node.timeToRead }} min read</p>
+    </article>
   </Layout>
 </template>
 
@@ -20,6 +22,9 @@ query ($id: String!) {
             id
             title
             excerpt
+            cover_image (width: 1000, height: 300, blur: 70, fit: cover)
+            date (format: "MMMM Do, YYYY")
+            timeToRead
           }
         }
       }
