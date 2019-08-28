@@ -16,11 +16,12 @@
         >#{{ tag.id }}</g-link>
       </div>
     </article>
+    <Pager v-bind:info="$page.allPost.pageInfo" linkClass="tx-xs tracking-wide pt-10 px-5" />
   </Layout>
 </template>
 
 <page-query>
-query ($page: Int!) {
+query ($page: Int) {
   allPost (perPage: 2, page: $page) @paginate {
     pageInfo {
       totalPages
@@ -45,4 +46,13 @@ query ($page: Int!) {
 }
 </page-query>
 
+<script>
+import { Pager } from "gridsome";
+
+export default {
+  components: {
+    Pager
+  }
+};
+</script>
 
