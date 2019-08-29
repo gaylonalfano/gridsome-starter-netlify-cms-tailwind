@@ -10,13 +10,16 @@
       <div>
         <g-link
           v-for="tag in edge.node.tags"
-          v-bind:key="tag"
+          v-bind:key="tag.id"
           v-bind:to="tag.path"
           class="pr-2"
         >#{{ tag.id }}</g-link>
       </div>
     </article>
-    <Pager v-bind:info="$page.allPost.pageInfo" linkClass="tx-xs tracking-wide pt-10 px-5" />
+    <Pager
+      v-bind:info="$page.allPost.pageInfo"
+      linkClass="tx-xs tracking-wide pt-10 px-5 hover:underline"
+    />
   </Layout>
 </template>
 

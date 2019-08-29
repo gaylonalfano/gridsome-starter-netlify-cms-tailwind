@@ -23,16 +23,16 @@
       <div>
         <g-link
           class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal-400 hover:bg-gray-700 mt-4 md:mt-0"
-          to="/login"
+          to="/admin/#/"
         >Login</g-link>
       </div>
     </div>
   </nav>
 </template>
 
-<static-query>
-query {
-  metaData {
+  <static-query>
+    query {
+      metaData {
     siteName
   }
 }
